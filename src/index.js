@@ -1,3 +1,4 @@
+import 'bootstrap/dist/css/bootstrap.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ApolloClient from "apollo-boost";
@@ -5,9 +6,9 @@ import { ApolloProvider } from "react-apollo";
 import { Router } from "@reach/router";
 
 import './index.css';
-import Home from './pages/Home/Home';
 import * as serviceWorker from './serviceWorker';
-import Search from "./pages/Search";
+import Home from './pages/Home/Home';
+import Search from "./pages/Search/Search";
 
 const localGraphQL = "https://sls-sandbox.zizoo.com/graphql";
 
