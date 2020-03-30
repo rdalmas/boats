@@ -1,24 +1,44 @@
 import React from 'react';
-import logo from './logo.svg';
+import { gql } from 'apollo-boost';
+import { Query } from "react-apollo";
+
 import './App.css';
+
+const input = {
+  active: true
+}
+
+const GET_BOATS = gql`
+  query getBoats($input: GetBoatInput) {
+    getBoats(input: $input) {
+      id
+      name
+      type
+    }
+  }
+`;
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Query query={GET_BOATS} variables={{ input }}>
+      {({ loading, error, data }) => {
+      if (loading) return null;
+      if (error) return `Error! ${error}`;
+
+      return (
+        <div>{data.getBoats.map(d => {
+          return (
+            <React.Fragment>
+              <span>{d.id}</span>
+              <span>{d.name}</span>
+              <span>{d.type}</span>
+            </React.Fragment>
+          );
+        })}</div>
+      );
+    }}
+      </Query>
     </div>
   );
 }
