@@ -1,27 +1,15 @@
-import React from 'react';
-import { gql } from 'apollo-boost';
+import React from "react";
 import { Query } from "react-apollo";
-
-import './App.css';
+import queries from "../graphql/queries";
 
 const input = {
   active: true
 }
 
-const GET_BOATS = gql`
-  query getBoats($input: GetBoatInput) {
-    getBoats(input: $input) {
-      id
-      name
-      type
-    }
-  }
-`;
-
-function App() {
+const Search = () => {
   return (
-    <div className="App">
-      <Query query={GET_BOATS} variables={{ input }}>
+    <div>
+      <Query query={queries.GET_BOATS} variables={{ input }}>
       {({ loading, error, data }) => {
       if (loading) return null;
       if (error) return `Error! ${error}`;
@@ -29,7 +17,7 @@ function App() {
       return (
         <div>{data.getBoats.map(d => {
           return (
-            <React.Fragment>
+            <React.Fragment key={d.id}>
               <span>{d.id}</span>
               <span>{d.name}</span>
               <span>{d.type}</span>
@@ -43,4 +31,4 @@ function App() {
   );
 }
 
-export default App;
+export default Search;
