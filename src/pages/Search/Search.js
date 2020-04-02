@@ -1,37 +1,36 @@
-import React from "react";
-import { Query } from "react-apollo";
+import React, { useContext, useEffect } from "react";
+import { withApollo } from "react-apollo";
+import { useQuery } from "@apollo/react-hooks";
 
-import Filter from "../../components/Filter";
+import Filter from "../../components/Filter/Filter";
 import SearchResults from "../../components/SearchResults/SearchResults";
+import SearchContextProvider from "./searchContext";
 import queries from "../../graphql/queries";
 
-const input = {
-  active: true
-}
-
-const Search = () => {
+const Search = ({ client }) => {
+  const { loading, error, data } = useQuery(queries.GET_BOATS, {
+    variables: { input: { active: true } },
+  });
+  let boats = [];
+  if (data) {
+    boats = client.readQuery({ query: queries.GET_BOATS_CACHE });
+  }
+  if (loading) return null;
+  if (error) return `Error! ${error}`;
   return (
-    <div className="container">
-      <Query query={queries.GET_BOATS} variables={{ input }}>
-      {({ loading, error, data }) => {
-      if (loading) return null;
-      if (error) return `Error! ${error}`;
-
-      return (
+    <SearchContextProvider>
+      <div className="container">
         <div className="row">
           <div className="col-sm-3">
-            <Filter />
+            <Filter boats={boats.getBoats} />
           </div>
           <div className="col-sm-9">
-            <SearchResults results={data} />
+            <SearchResults />
           </div>
-        </div>
-        
-      );
-    }}
-      </Query>
-    </div>
+        </div> 
+      </div>
+    </SearchContextProvider>
   );
 }
 
-export default Search;
+export default withApollo(Search);
