@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const PointerRight = styled.div`
-  width: 200px;
+  width: 10rem;
   height: 40px;
   position: relative;
   background: #de6449;

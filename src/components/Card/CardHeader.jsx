@@ -4,7 +4,7 @@ import TitleSubtitle from "../../styled-components/TitleSubtitle";
 import LikeButton from "../../styled-components/LikeButton";
 import ViewsText from "../../styled-components/ViewsText";
 
-const CardHeader = ({ name, locality, year, country }) => {
+const CardHeader = ({ item: { name, locality, year, country }}) => {
   const [like, setLike] = useState(false);
   return (
     <div className="card-header">

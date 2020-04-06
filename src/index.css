@@ -20,3 +20,7 @@ code {
 .container {
   height: 100%;
 }
+
+.white-text {
+  color: #fff;
+}

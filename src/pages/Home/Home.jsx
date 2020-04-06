@@ -1,26 +1,23 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
-import "./Home.css";
+import Wrapper from '../../styled-components/Wrapper';
+import Panel from '../../styled-components/Panel';
+import boatImg from "../../img/boat.jpg";
+import { searchDefaults as def } from "../../constants";
 
-function Home() {
-  return (
-    <div className="wrapper">
-      <div className="jumbotron jumbotron-fluid mb-0">
-        <div className="main">
-          <div className="row justify-content-center text-center">
-          <div className="col-md-10 col-lg-6">
-            <h1>Your next boat trip starts here</h1>
-            <p className="lead">Find your next destination</p>
-            <p className="lead">
-              <Link className="btn btn-secondary btn-lg" to={{pathname: "/search", search: "?length=0&year=1950"}} role="button">Search</Link>
-            </p>
-          </div>
-          </div>
+const Home = () => (
+  <Wrapper background={boatImg}>
+    <Panel>
+      <div className="row justify-content-center text-center">
+        <div className="col-md-12 col-lg-8">
+          <h1 className="white-text">Your next boat trip starts here</h1>
+          <h5 className="white-text">Find your next destination</h5>
+          <Link className="btn btn-secondary btn-lg" to={{pathname: "/search", search: `?length=${def.minLength}&year=${def.minYear}`}} role="button">Search</Link>
         </div>
       </div>
-    </div>
-  )
-}
+    </Panel>
+  </Wrapper>
+);
 
 export default Home;

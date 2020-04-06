@@ -17,10 +17,10 @@ const Search = () => {
       <div className="container">
         <div className="col-md-12">
           <div className="row">
-              <div className="col-md-3">
+              <div className="col-md-3 mt-4">
                 <Filter boats={data.getBoats} />
               </div>
-              <div className="col-md-9">
+              <div className="col-md-9 mt-4">
                 <SearchResults loading={loading} />
               </div>
           </div>

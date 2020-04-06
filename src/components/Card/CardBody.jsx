@@ -8,9 +8,9 @@ import FieldName from "../../styled-components/FieldName";
 import StarsReview from "../../styled-components/StarsReview";
 import TextIconList from "../../styled-components/TextIconList";
 
-const CardBody = ({ length, guests, cabins, reviews, price }) => (
-  <div className="card-body no-padding">
-    <div className="row box no-gutters">
+const CardBody = ({ item: { length, guests, cabins, reviews, price }}) => (
+  <div className="card-body no-padding mb-3 mt-3">
+    <div className="row no-gutters">
       <div className="col-md-7">
         <div className="row no-gutters">
           <div className="col-md-4 align-items-center">
