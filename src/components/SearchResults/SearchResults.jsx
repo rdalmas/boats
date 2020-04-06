@@ -4,7 +4,7 @@ import SearchContext from "../../pages/Search/search.context";
 import Card from "../Card/Card";
 import NoResults from "./NoResults";
 
-const SearchResults = ({ loading }) => {
+const SearchResults = () => {
   const [filteredBoats] = useContext(SearchContext);
   return (
     <div className="container">
@@ -13,7 +13,7 @@ const SearchResults = ({ loading }) => {
           { filteredBoats && filteredBoats.length > 1 && filteredBoats.map(boat => (
             <Card key={boat.id} item={boat} />
           ))}
-          { !loading && filteredBoats && filteredBoats.length === 0 && (
+          { filteredBoats && filteredBoats.length === 0 && (
             <NoResults />
           )}
         </div>

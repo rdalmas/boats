@@ -5,7 +5,7 @@ import Wrapper from "../../styled-components/Wrapper";
 import Panel from '../../styled-components/Panel';
 import lostImg from "../../img/lost.jpg";
 
-const NotFound = () => (
+export const NotFound = () => (
   <Wrapper background={lostImg}>
     <Panel>
       <div className="col-md-12 col-sm-8">

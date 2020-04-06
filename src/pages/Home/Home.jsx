@@ -6,7 +6,7 @@ import Panel from '../../styled-components/Panel';
 import boatImg from "../../img/boat.jpg";
 import { searchDefaults as def } from "../../constants";
 
-const Home = () => (
+export const Home = () => (
   <Wrapper background={boatImg}>
     <Panel>
       <div className="row justify-content-center text-center">

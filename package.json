@@ -22,9 +22,13 @@
     "styled-components": "^5.0.1"
   },
   "devDependencies": {
+    "@apollo/react-testing": "^3.1.4",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1"
+    "@testing-library/user-event": "^7.2.1",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "enzyme-to-json": "^3.4.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -34,6 +38,18 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/index.js"
+    ],
+    "coverageReporters": [
+      "text"
+    ]
   },
   "browserslist": {
     "production": [

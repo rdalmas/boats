@@ -10,6 +10,7 @@ import inRange from "lodash.inrange";
 import Home from "./pages/Home/Home";
 import Search from "./pages/Search/Search";
 import NotFound from "./pages/NotFound/NotFound";
+import ErrorBoundary from "./components/Error/ErrorBoundary";
 import { searchDefaults as def } from "./constants"
 
 const SearchWithParams = ({ length, year, history }) => {
@@ -33,18 +34,20 @@ const SearchWithQuery = ({location}) => {
 
 const App = () => (
   <Router>
-    <Switch>
-      <Route path="/" exact>
-        <Home />
-      </Route>
-      <Route path="/search" render={props => (
-        <SearchWithQuery {...props} />
-      )}>
-      </Route>
-      <Route path="*">
-        <NotFound />
-      </Route>
-    </Switch>
+    <ErrorBoundary>
+      <Switch>
+        <Route path="/" exact>
+          <Home />
+        </Route>
+        <Route path="/search" render={props => (
+          <SearchWithQuery {...props} />
+          )}>
+        </Route>
+        <Route path="*">
+          <NotFound />
+        </Route>
+      </Switch>
+    </ErrorBoundary>
   </Router>
 );
 

@@ -1,17 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { useQuery } from "@apollo/react-hooks";
 
 import Filter from "../../components/Filter/Filter";
 import SearchResults from "../../components/SearchResults/SearchResults";
 import SearchProvider from "./search.provider";
 import queries from "../../graphql/queries";
+import Spinner from "../../styled-components/Spinner";
 
-const Search = () => {
+export const Search = () => {
+  const [, setError] = useState();
   const { loading, error, data } = useQuery(queries.GET_BOATS, {
     variables: { input: { active: true } },
   });
-  if (loading) return "";
-  if (error) return `Error! ${error}`;
+  if (loading) return <Spinner />;
+  if (error) return setError(() => {
+    throw error;
+  });
   return (
     <SearchProvider>
       <div className="container">
@@ -21,7 +25,7 @@ const Search = () => {
                 <Filter boats={data.getBoats} />
               </div>
               <div className="col-md-9 mt-4">
-                <SearchResults loading={loading} />
+                <SearchResults />
               </div>
           </div>
         </div>

@@ -1,9 +1,15 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import Home from './Home';
+import { shallow } from "enzyme";
 
-test('renders home link', () => {
-  const { getByText } = render(<Home />);
-  const linkElement = getByText(/home/i);
-  expect(linkElement).toBeInTheDocument();
+import { Home } from './Home';
+
+describe("Page - Home", () => {
+  let component;
+  beforeEach(() => {
+    component = shallow(<Home />);
+  });
+  it('should render the Home Page correctly', () => {   
+    expect(component).toMatchSnapshot();
+  });
 });
+

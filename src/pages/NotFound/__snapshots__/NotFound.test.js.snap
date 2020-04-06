@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Page - Not Found should render the Not Found Page correctly 1`] = `
+<styled.div
+  background="lost.jpg"
+>
+  <styled.div>
+    <div
+      className="col-md-12 col-sm-8"
+    >
+      <h1
+        className="row no-gutters white-text justify-content-center"
+      >
+        Ops...
+      </h1>
+      <h5
+        className="white-text row no-gutters text justify-content-center"
+      >
+        It seems that you're lost in the sea.
+      </h5>
+      <h5
+        className="white-text row no-gutters text justify-content-center"
+      >
+        Let us help guide you out and get you back home.
+      </h5>
+      <div
+        className="row no-gutters justify-content-center"
+      >
+        <Link
+          className="btn btn-secondary btn-lg"
+          role="button"
+          to={
+            Object {
+              "pathname": "/",
+            }
+          }
+        >
+          Home
+        </Link>
+      </div>
+    </div>
+  </styled.div>
+</styled.div>
+`;
