@@ -1,0 +1,11 @@
+.no-padding {
+  padding: 0;
+}
+
+img {
+  padding: 0.5rem;
+}
+
+.red-text {
+  color: #de6449;
+}

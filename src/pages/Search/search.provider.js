@@ -1,8 +1,8 @@
-import React, { useState, createContext } from "react";
+import React, { useState } from "react";
 
-export const SearchContext = createContext();
+import SearchContext from "./search.context";
 
-const SearchContextProvider = props => {
+const SearchProvider = props => {
   const [filteredBoats, filterBoats] = useState([], () => {});
   return (
     <SearchContext.Provider value={[filteredBoats, filterBoats]}>
@@ -11,5 +11,5 @@ const SearchContextProvider = props => {
   )
 }
 
-export default SearchContextProvider;
+export default SearchProvider;
 

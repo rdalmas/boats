@@ -2,25 +2,16 @@ import 'bootstrap/dist/css/bootstrap.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { ApolloProvider } from "react-apollo";
-import { Router } from "@reach/router";
 
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 import client from "./client";
-import Home from './pages/Home/Home';
-import Search from "./pages/Search/Search";
-
-let SearchRoute = () => <Search />
-let HomeRoute = () => <Home />
-
+import App from "./App";
 
 ReactDOM.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
-      <Router>
-        <HomeRoute path="/" />
-        <SearchRoute path="search" />
-      </Router>
+      <App />
     </ApolloProvider>
   </React.StrictMode>,
   document.getElementById('root')
