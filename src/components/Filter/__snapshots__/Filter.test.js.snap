@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Components - Filter should render the Filter correctly 1`] = `
+<ContextProvider
+  value={
+    Array [
+      Array [],
+      [Function],
+    ]
+  }
+>
+  <Filter
+    boats={
+      Array [
+        Object {
+          "active": true,
+          "cabins": 5,
+          "country": "United States",
+          "guests": 10,
+          "id": 1,
+          "imageUrl": "",
+          "length": 50,
+          "locality": "California",
+          "marina": "Buff Marina",
+          "name": "Alpha",
+          "price": 5000,
+          "reviews": Object {
+            "score": 5,
+            "total": 15,
+          },
+          "skipper": false,
+          "type": "Speed boat",
+          "year": 2010,
+        },
+        Object {
+          "active": true,
+          "cabins": 5,
+          "country": "United States",
+          "guests": 10,
+          "id": 2,
+          "imageUrl": "",
+          "length": 40,
+          "locality": "California",
+          "marina": "Buff Marina",
+          "name": "Bravo",
+          "price": 5000,
+          "reviews": Object {
+            "score": 5,
+            "total": 15,
+          },
+          "skipper": false,
+          "type": "Speed boat",
+          "year": 1951,
+        },
+        Object {
+          "active": true,
+          "cabins": 5,
+          "country": "United States",
+          "guests": 10,
+          "id": 1,
+          "imageUrl": "",
+          "length": 30,
+          "locality": "California",
+          "marina": "Buff Marina",
+          "name": "Charlie",
+          "price": 5000,
+          "reviews": Object {
+            "score": 5,
+            "total": 15,
+          },
+          "skipper": false,
+          "type": "Speed boat",
+          "year": 2019,
+        },
+      ]
+    }
+  />
+</ContextProvider>
+`;

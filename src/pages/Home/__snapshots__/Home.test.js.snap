@@ -24,12 +24,7 @@ exports[`Page - Home should render the Home Page correctly 1`] = `
         <Link
           className="btn btn-secondary btn-lg"
           role="button"
-          to={
-            Object {
-              "pathname": "/search",
-              "search": "?length=0&year=1950",
-            }
-          }
+          to="/search"
         >
           Search
         </Link>

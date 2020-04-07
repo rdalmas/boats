@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState, useMemo } from "react";
+import React, { useRef, useState, useMemo, useContext, useEffect } from "react";
 
 import SearchContext from "../../pages/Search/search.context";
 import InputRange from "../../styled-components/InputRange";
@@ -7,7 +7,7 @@ import useDebounce from "../../hooks/useDebounce";
 import useQueryString from "../../hooks/useQueryString";
 import { searchDefaults as def } from "../../constants";
 
-const Filter = ({ boats }) => {
+export const Filter = ({ boats }) => {
   const [yearQs, setYearQs] = useQueryString("year");
   const [lengthQs, setLengthQs] = useQueryString("length");
   const [,filterBoats] = useContext(SearchContext);
@@ -28,8 +28,7 @@ const Filter = ({ boats }) => {
     let result = boatsArray.filter(
       boat => 
       (!dbLengthFilter || boat.length > dbLengthFilter) &&
-      (!dbYearFilter || boat.year > dbYearFilter)
-      );
+      (!dbYearFilter || boat.year > dbYearFilter));
     filterBoats(result);
     setLengthQs(dbLengthFilter);
     setYearQs(dbYearFilter);
@@ -47,7 +46,7 @@ const Filter = ({ boats }) => {
     <div className="container">
       <div className="row">
         <div className="col-md-12">
-          <div className="row justify-content-center"><h5>Filters</h5></div>
+          <div className="row justify-content-center"><h4 className="blue-text">Filters</h4></div>
           <div className="col-md-12">
             <form onReset={clearFilter} ref={filterForm}>
               <div className="form-group">
