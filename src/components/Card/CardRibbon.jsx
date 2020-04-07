@@ -3,7 +3,7 @@ import styled from "styled-components";
 const CardRibbon = styled.div`
   text-transform: uppercase;
   color: white;
-  background-color: #696969;
+  background-color: #6c757d;
   padding: 0.25rem 0.5rem;
   position: absolute;
   left: -15px;
