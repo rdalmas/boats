@@ -45,7 +45,7 @@ export const Filter = ({ boats }) => {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-md-12">
+        <div className="col-md-12 mt-2">
           <div className="row justify-content-center"><h4 className="blue-text">Filters</h4></div>
           <div className="col-md-12">
             <form onReset={clearFilter} ref={filterForm}>

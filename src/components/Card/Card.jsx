@@ -1,7 +1,5 @@
 import React from "react";
 
-import "./Card.css";
-
 import CardHeader from "./CardHeader";
 import CardBody from "./CardBody";
 import CardRibbon from "./CardRibbon";

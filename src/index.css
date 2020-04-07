@@ -21,10 +21,25 @@ code {
   height: 100%;
 }
 
+.no-padding {
+  padding: 0;
+}
+
+img {
+  padding: 0.5rem;
+}
+
+/* TODO: Add a theme using styled components 
+and get rid of colors, font sizes along the codebase */
+
 .white-text {
   color: #fff;
 }
 
 .blue-text {
   color: #014b67;
+}
+
+.red-text {
+  color: #de6449;
 }
