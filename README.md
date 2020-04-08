@@ -1,5 +1,5 @@
 
-This is the final look of the search page:
+DEMO: https://zizoo-challenge.herokuapp.com/
 
 ![Search Page](https://github.com/rdalmas/boats/blob/master/docs/boat_search.png)
 
