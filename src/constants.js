@@ -6,3 +6,10 @@ export const searchDefaults = {
   minYear: 1950,
   maxYear: currentYear
 }
+
+export const menus = [
+  {
+    href: "/home",
+    label: "Home"
+  }
+];

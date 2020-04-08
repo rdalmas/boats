@@ -6,6 +6,8 @@ import SearchResults from "../../components/SearchResults/SearchResults";
 import SearchProvider from "./search.provider";
 import queries from "../../graphql/queries";
 import Spinner from "../../styled-components/Spinner";
+import brandImg from "../../img/zizoo-logo.svg";
+import TopBar from "../../components/TopBar/TopBar";
 
 export const Search = () => {
   const [, setError] = useState();
@@ -18,6 +20,7 @@ export const Search = () => {
   });
   return (
     <SearchProvider>
+      <TopBar brandImg={brandImg} />
       <div className="container">
         <div className="col-md-12">
           <div className="row">
